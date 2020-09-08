@@ -1,7 +1,8 @@
 header {
 	display: flex;
 	flex-direction: column;
-	background-color: #e3a63e;
+	background-color: #c7891e;
+	background: url(../images/brick-wall.png);
 	height: 400px;
 	width: 100%;
 	justify-content: center;

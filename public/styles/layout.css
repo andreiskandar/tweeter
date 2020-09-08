@@ -23,8 +23,11 @@ body {
 	font-size: 24px;
 }
 
-nav {
-	font-family: 'Bungee', cursive;
+main {
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	width: 90%;
 }
 
 /*
