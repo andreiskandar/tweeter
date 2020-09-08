@@ -1,18 +1,16 @@
 $(document).ready(() => {
+	const maxChar = 140;
+
 	//character count
 	$('#tweet-text').on('keyup', function () {
-		const maxChar = 140;
 		let length = $(this).val().length;
-		length = maxChar - length;
-		$('#chars').text(length);
-	});
+		console.log('RD', length);
 
-	$('#chars').each(function () {
-		console.log(this.html());
-		const value = parseInt(this.html());
-		console.log(value);
-		if (value < 0) {
-			$(this).css('color', 'red');
+		if (length > 140) {
+			console.log('We are greater than 140');
+			$('#chars').css('color', 'red');
 		}
+		length = maxChar - length;
+		let value = $('#chars').text(length);
 	});
 });

@@ -1,12 +1,12 @@
-.new-tweet {
+/* .new-tweet {
 	display: flex;
 	flex-direction: column;
-}
-
+} */
 form {
 	display: flex;
 	flex-direction: column;
 }
+
 label {
 	font-weight: bold;
 }
@@ -37,12 +37,14 @@ section div button {
 	height: 2em;
 	background-color: #4056a1;
 	color: #ffffff;
-	font-size: medium;
-	margin: 0.5em 0.5em 0.5em 0;
+	font-size: 0.7em;
+	margin-left: 0;
+	margin-top: 0.5em;
+	padding: 0 1.2em;
 }
 
 section div output {
 	font-family: 'Bungee', cursive;
-	font-size: medium;
+	font-size: 0.7em;
 	padding: 0.5em;
 }
