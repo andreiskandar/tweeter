@@ -4,11 +4,12 @@ $(document).ready(() => {
 	//character count
 	$('#tweet-text').on('keyup', function () {
 		let length = $(this).val().length;
-		console.log('RD', length);
+		console.log('length:', length);
 
 		if (length > 140) {
-			console.log('We are greater than 140');
 			$('#chars').css('color', 'red');
+		} else {
+			$('#chars').css('color', 'inherit');
 		}
 		length = maxChar - length;
 		let value = $('#chars').text(length);

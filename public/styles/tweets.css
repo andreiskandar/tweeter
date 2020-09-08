@@ -1,0 +1,18 @@
+article {
+	margin-top: 2em;
+	border: solid 4px #545149;
+}
+.tweet-header {
+	font-family: 'Source Sans Pro', sans-serif;
+	display: flex;
+	justify-content: space-between;
+}
+
+article textarea {
+	width: 100%;
+}
+
+.more-info {
+	display: flex;
+	justify-content: space-between;
+}
