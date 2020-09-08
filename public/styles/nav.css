@@ -14,15 +14,16 @@ nav {
 	color: red;
 }
 
-.logo {
+nav .logo {
 	margin: 1.5em;
 	font-family: 'Bungee', cursive;
 	font-size: 2em;
 	margin-top: 0.7em;
 	align-items: center;
 }
-.aside {
+
+nav .aside {
 	margin: 1.5em;
 	margin-top: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 }

@@ -11,7 +11,6 @@
 			type="text/css"
 		/>
 
-		<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
 			rel="stylesheet"
@@ -69,11 +68,14 @@
 					<textarea name="text" id="tweet-text"></textarea>
 					<div>
 						<button type="submit">Tweet</button>
-						<output name="counter" class="counter" for="tweet-text">140</output>
+						<output name="counter" class="counter" for="tweet-text"
+							><span id="chars">140</span> characters</output
+						>
 					</div>
 				</form>
 			</section>
 		</main>
 		<script src="./scripts/client.js"></script>
+		<script src="./scripts/composer-char-counter.js"></script>
 	</body>
 </html>

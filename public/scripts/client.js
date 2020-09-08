@@ -4,11 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$('#tweet-text').keyup((e) => {
-	const maxChar = 140;
-	const len = $();
-});
-
+//user taps the arrow, the cursor will be focused on textarea
 $('#arrow-down').on('click', () => {
 	$('#tweet-text').focus();
 });

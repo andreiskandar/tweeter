@@ -1,7 +1,6 @@
 .new-tweet {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 }
 
 form {
@@ -9,16 +8,16 @@ form {
 	flex-direction: column;
 }
 label {
-	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: bold;
 }
 
 textarea {
+	resize: none;
 	background: transparent;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 0.7em;
-	line-height: 0.8em;
-	overflow: hidden;
+	font-size: 1em;
+	height: 2.5em;
+	padding-top: 0.4em;
+	overflow: auto;
 	border-top: none;
 	border-right: none;
 	border-left: none;
@@ -27,14 +26,15 @@ textarea {
 
 textarea:focus {
 	outline: none;
-	/* border: none; */
 }
+
 section div {
 	display: flex;
 	justify-content: space-between;
 }
 section div button {
 	font-family: 'Bungee', cursive;
+	height: 2em;
 	background-color: #4056a1;
 	color: #ffffff;
 	font-size: medium;
