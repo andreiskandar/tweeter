@@ -1,13 +1,9 @@
-form {
+.form {
 	display: flex;
 	flex-direction: column;
 }
 
-label {
-	font-weight: bold;
-}
-
-#tweet-text {
+.tweet-text {
 	resize: none;
 	background: transparent;
 	font-size: 1em;
@@ -20,16 +16,16 @@ label {
 	border-bottom: 4px solid #545149;
 }
 
-textarea:focus {
+.tweet-text:focus {
 	outline: none;
 }
 
-section div {
+.new-tweet__footer {
 	display: flex;
 	justify-content: space-between;
 }
-section div button {
-	font-family: 'Bungee', cursive;
+
+.tweet-button {
 	height: 2em;
 	background-color: #4056a1;
 	color: #ffffff;
@@ -39,8 +35,7 @@ section div button {
 	padding: 0 1.2em;
 }
 
-section div output {
-	font-family: 'Bungee', cursive;
-	font-size: 0.7em;
+.counter {
+	font-size: 0.8em;
 	padding: 0.5em;
 }

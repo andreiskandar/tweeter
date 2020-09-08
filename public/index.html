@@ -33,17 +33,19 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<!-- App JS -->
-		<script type="text/javascript" src="/scripts/client.js"></script>
+		<script src="./scripts/composer-char-counter.js"></script>
+		<script src="./scripts/client.js"></script>
 	</head>
 
 	<body>
 		<!-- Top nav bar (fixed) -->
 		<nav>
-			<span class="logo">tweeter</span>
+			<span class="logo font-bungee">tweeter</span>
 
 			<span class="aside"
-				><b>Write</b> a new tweet <i class="fas fa-chevron-double-down" id="arrow-down"></i
-			></span>
+				><b>Write</b> a new tweet
+				<a href="#tweet-text" id="arrow-down"> <i class="fas fa-chevron-double-down"></i> </a>
+			</span>
 
 			<!-- <i class="fal fa-chevron-double-down"></i> -->
 		</nav>
@@ -62,38 +64,20 @@
 		<main class="container">
 			<section class="new-tweet">
 				<h2>Compose Tweet</h2>
-				<form method="POST" action="/tweets">
-					<!-- <label for="tweet-text">What are you humming about?</label> -->
+				<form method="POST" action="/tweets" class="form">
 					<textarea
 						name="text"
-						id="tweet-text"
+						class="tweet-text"
 						placeholder="What are you humming about?"
 					></textarea>
-					<div>
-						<button type="submit">Tweet</button>
-						<output name="counter" class="counter" for="tweet-text"
+					<footer class="new-tweet__footer">
+						<button type="submit" class="tweet-button font-bungee">Tweet</button>
+						<output name="counter" class="counter font-bungee" for="tweet-text"
 							><span id="chars">140</span></output
 						>
-					</div>
+					</footer>
 				</form>
 			</section>
-			<article>
-				<div class="tweet-header">
-					<div class="profile">Newton</div>
-					<div class="tweeter-account">@sirIsaac</div>
-				</div>
-				<textarea name="text" id="tweet-text">Incoming message here</textarea>
-				<div class="more-info">
-					<div><span>10 days ago</span></div>
-					<div class="icons">
-						<i class="fas fa-flag"></i>
-						<i class="far fa-retweet"></i>
-						<i class="far fa-heart"></i>
-					</div>
-				</div>
-			</article>
 		</main>
-		<script src="./scripts/client.js"></script>
-		<script src="./scripts/composer-char-counter.js"></script>
 	</body>
 </html>

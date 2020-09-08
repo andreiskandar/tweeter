@@ -1,10 +1,9 @@
 $(document).ready(() => {
 	const maxChar = 140;
 
-	//character count
+	//character count listener
 	$('#tweet-text').on('keyup', function () {
 		let length = $(this).val().length;
-		console.log('length:', length);
 
 		if (length > 140) {
 			$('#chars').css('color', 'red');

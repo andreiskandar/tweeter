@@ -1,18 +1,63 @@
 article {
 	margin-top: 2em;
 	border: solid 4px #545149;
+	padding: 10px;
 }
+
+article:hover {
+	box-shadow: 10px 10px 10px #4056a1;
+}
+
 .tweet-header {
-	font-family: 'Source Sans Pro', sans-serif;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	margin: 0.8em;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
 }
 
 article textarea {
 	width: 100%;
 }
+.avatars {
+	width: 50%;
+}
+
+#sender-name {
+	margin-left: 0.5em;
+}
+
+#tweeter-account {
+	display: none;
+}
+
+article:hover #tweeter-account {
+	display: block;
+	color: #9f9fba;
+	font-weight: 450;
+}
+
+.message-received {
+	font-size: 0.6em;
+	margin-left: 1em;
+	font-weight: 600;
+}
 
 .more-info {
+	size: 50%;
 	display: flex;
 	justify-content: space-between;
+}
+
+.fa-xs {
+	color: #4056a1;
+	margin: 0 0.5em;
+}
+
+.fa-xs:hover {
+	transform: scale(1.3);
 }
