@@ -36,24 +36,36 @@ $(document).ready(function () {
 	};
 
 	const renderTweets = (tweets) => {
+		$('#tweets-container').empty();
 		const render = tweets.map((tweet) => {
 			const newTweet = createTweetElement(tweet);
-			$('.container').append(newTweet);
+			$('#tweets-container').prepend(newTweet);
 		});
 	};
-
-	// $('#tweet-button').on('click', function (e) {
-	// 	$.ajax($('#tweet-text'),{ method: 'POST'}).then((sentTweet) => {
-
-	// 	})
-	// 	e.preventDefault();
-	// });
 
 	const loadTweets = () => {
-		$.ajax('http://localhost:8080/tweets', { method: 'GET' }).then((fetchedTweet) => {
-			renderTweets(fetchedTweet);
-		});
+		$.get('http://localhost:8080/tweets').then((fetchedData) => renderTweets(fetchedData));
+		// $.ajax('http://localhost:8080/tweets', { method: 'GET' }).then((fetchedTweet) => {
+		// 	renderTweets(fetchedTweet);
+		// });
 	};
 
+	// Load old tweets when webpage loaded first time
 	loadTweets();
+
+	$('.form').submit(function (e) {
+		e.preventDefault();
+		const serializedData = $(this).serialize();
+		$('#tweet-text').val('');
+		$.post('http://localhost:8080/tweets', serializedData).then(loadTweets);
+	});
+
+	// Allow user to submit tweet pressing 'enter' button
+	$('.form').keyup(function (e) {
+		e.preventDefault();
+		if (e.which === 13) {
+			$('.form').submit();
+			return false;
+		}
+	});
 });
