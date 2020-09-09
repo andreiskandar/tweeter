@@ -26,6 +26,9 @@ article textarea {
 .avatars {
 	width: 50%;
 }
+article:hover #avatars {
+	transform: scale(1.05);
+}
 
 #sender-name {
 	margin-left: 0.5em;
@@ -44,13 +47,29 @@ article:hover #tweeter-account {
 .message-received {
 	font-size: 0.6em;
 	margin-left: 1em;
-	font-weight: 600;
+	font-weight: 500;
+}
+
+.tweet-text {
+	padding-left: 0.7em;
+	font-weight: 500;
 }
 
 .more-info {
 	size: 50%;
 	display: flex;
 	justify-content: space-between;
+}
+
+#created-at {
+	padding-left: 0.7em;
+}
+
+article:hover #sender-name,
+article:hover #tweeter-account,
+article:hover .tweet-text,
+article:hover #created-at {
+	font-weight: 600;
 }
 
 .fa-xs {

@@ -38,7 +38,6 @@ $(document).ready(function () {
 		const { name, avatars, handle } = newTweet[0].user;
 		const message = newTweet[0].content.text;
 		const createdAt = newTweet[0].created_at;
-		console.log(Date.now());
 		const diff = moment(createdAt).fromNow();
 
 		// console.log('diff:', diff.getSeconds());
