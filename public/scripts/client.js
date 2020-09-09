@@ -5,38 +5,11 @@
  */
 
 $(document).ready(function () {
-	const data = [
-		{
-			user: {
-				name: 'Newton',
-				avatars: 'https://i.imgur.com/73hZDYK.png',
-				handle: '@SirIsaac',
-			},
-			content: {
-				text: 'If I have seen further it is by standing on the shoulders of giants',
-			},
-			created_at: 1599616994199,
-		},
-		{
-			user: {
-				name: 'Descartes',
-				avatars: 'https://i.imgur.com/nlhLi3I.png',
-				handle: '@rd',
-			},
-			content: {
-				text: 'Je pense , donc je suis',
-			},
-			created_at: 1599614494199,
-		},
-	];
-
 	const createTweetElement = (newTweet) => {
 		const { name, avatars, handle } = newTweet.user;
 		const message = newTweet.content.text;
 		const createdAt = newTweet.created_at;
 		const diff = moment(createdAt).fromNow();
-
-		// console.log('diff:', diff.getSeconds());
 
 		const tweetHTML = `
 			<article>
@@ -69,5 +42,18 @@ $(document).ready(function () {
 		});
 	};
 
-	renderTweets(data);
+	// $('#tweet-button').on('click', function (e) {
+	// 	$.ajax($('#tweet-text'),{ method: 'POST'}).then((sentTweet) => {
+
+	// 	})
+	// 	e.preventDefault();
+	// });
+
+	const loadTweets = () => {
+		$.ajax('http://localhost:8080/tweets', { method: 'GET' }).then((fetchedTweet) => {
+			renderTweets(fetchedTweet);
+		});
+	};
+
+	loadTweets();
 });

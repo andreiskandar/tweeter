@@ -2,7 +2,7 @@ $(document).ready(() => {
 	const maxChar = 140;
 
 	//character count listener
-	$('#focus').on('keyup', function () {
+	$('#tweet-text').on('keyup', function () {
 		let length = $(this).val().length;
 
 		if (length > 140) {
