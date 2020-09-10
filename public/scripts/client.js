@@ -10,14 +10,23 @@ $(document).ready(function () {
 		empty: 'Please type a tweet',
 	};
 
-	$('#arrow-down').click(() => {
+	$('#home').click(() => {
+		$('#tweet-text').focus();
 		$('html, body').animate(
 			{
 				scrollTop: $('#tweet-text').offset({ top: 600 }),
 			},
-			3000
+			4000
 		);
-		// document.getElementById('#tweet-text').scrollIntoView({ behavior: 'smooth' });
+	});
+
+	// console.log('window.scrollbars.visible:', window.scrollbars.visible);
+	$(window).scroll(function () {
+		const scroll = window.scrollY;
+		if (scroll > 200) {
+			$('.home-button').css('visibility', 'visible');
+		}
+		$('.home-button').css('visibility', 'hidden');
 	});
 
 	//escape function to prevent malicious attacks
@@ -32,16 +41,14 @@ $(document).ready(function () {
 
 		if (textInput.length > 140) {
 			return { status: false, message: ERROR_MESSAGE.too_long };
-		} else if (!textInput) {
+		} else if (!textInput || textInput.length === 1) {
+			// textInput.length to send error if enter is pressed with no message
 			return {
 				status: false,
 				message: ERROR_MESSAGE.empty,
 			};
-		} else {
-			return {
-				status: true,
-			};
 		}
+		return { status: true };
 	};
 
 	const createTweetElement = (newTweet) => {
@@ -54,14 +61,14 @@ $(document).ready(function () {
 			<article>
 				<div class="tweet-header">
 					<div class="profile">
-						<img src="${escape(avatars)}" alt="" id="avatars"/>
-						<span id="sender-name">${escape(name)}</span>
+						<img src="${avatars}" alt="" id="avatars"/>
+						<span id="sender-name">${name}</span>
 					</div>
-					<div id="tweeter-account">${escape(handle)}</div>
+					<div id="tweeter-account">${handle}</div>
 				</div>
 				<p class="tweet-text">${escape(message)}</p>
 				<div class="more-info">
-					<div id="created-at">${escape(diff)}</div>
+					<div id="created-at">${diff}</div>
 					<div class="icons">
 						<i class="fas fa-flag fa-xs"></i>
 						<i class="far fa-retweet fa-xs"></i>
@@ -88,8 +95,6 @@ $(document).ready(function () {
 		).hide();
 		$('section').append(errorDiv);
 		errorDiv.slideDown(900);
-		// $('section:last-child').slideUp(10000);
-		// $('section').last().slideDown(900);
 	};
 
 	const loadTweets = () => {
@@ -103,23 +108,29 @@ $(document).ready(function () {
 		e.preventDefault();
 		// remove error-message element if exists
 		$('.error-message').remove();
+		const formValidation = validatingForm();
 
 		// validate form and set error message
-		if (!validatingForm().status) {
-			renderErrorMessage(validatingForm().message);
+		if (!formValidation.status) {
+			renderErrorMessage(formValidation.message);
 			return;
-		} else {
-			const serializedData = $(this).serialize();
-			$.post('http://localhost:8080/tweets', serializedData).then(() => {
-				loadTweets();
-				$('#tweet-text').val('');
-			});
 		}
+		const serializedData = $(this).serialize();
+		$.post('http://localhost:8080/tweets', serializedData).then(() => {
+			loadTweets();
+
+			// empty tweeter input area
+			$('#tweet-text').val('');
+
+			// reset character count
+			$('#chars').text(140);
+		});
 	});
 
 	// Allow user to submit tweet pressing 'enter' button
-	$('.form').keydown(function (e) {
+	$('.form').keyup(function (e) {
 		e.preventDefault();
+		// 13 for enter
 		if (e.which === 13) {
 			$('.form').submit();
 			return;

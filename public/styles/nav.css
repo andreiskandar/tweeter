@@ -30,5 +30,24 @@ nav .logo {
 nav .aside {
 	margin: 1.5em;
 	margin-top: 1.7em;
-	/* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+.home-button {
+	visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 90vh;
+	right: 5vw;
+	transform: scale(2.5);
+	color: #fff;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 500px;
+	background-color: #d74d4d;
+}
+
+.home-button:hover {
+	transform: scale(2.7);
 }
