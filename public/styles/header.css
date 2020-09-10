@@ -1,6 +1,6 @@
 header {
-	margin-top: 120px;
 	display: flex;
+	margin-top: 120px;
 	flex-direction: column;
 	background-color: #c7891e;
 	background: url(../images/brick-wall.png);

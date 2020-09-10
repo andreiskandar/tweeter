@@ -10,6 +10,16 @@ $(document).ready(function () {
 		empty: 'Please type a tweet',
 	};
 
+	$('#arrow-down').click(() => {
+		$('html, body').animate(
+			{
+				scrollTop: $('#tweet-text').offset({ top: 600 }),
+			},
+			3000
+		);
+		// document.getElementById('#tweet-text').scrollIntoView({ behavior: 'smooth' });
+	});
+
 	//escape function to prevent malicious attacks
 	const escape = (str) => {
 		let div = document.createElement('div');
@@ -22,7 +32,7 @@ $(document).ready(function () {
 
 		if (textInput.length > 140) {
 			return { status: false, message: ERROR_MESSAGE.too_long };
-		} else if (textInput.length === 0 || textInput === null) {
+		} else if (!textInput) {
 			return {
 				status: false,
 				message: ERROR_MESSAGE.empty,
@@ -73,7 +83,13 @@ $(document).ready(function () {
 	};
 
 	const renderErrorMessage = (message) => {
-		$('section').append(`<div class="error-message">${message}</div>`);
+		const errorDiv = $(
+			`<div class="error-message"><i class="fal fa-exclamation-triangle"></i>${message}<i class="fal fa-exclamation-triangle"></i></div>`
+		).hide();
+		$('section').append(errorDiv);
+		errorDiv.slideDown(900);
+		// $('section:last-child').slideUp(10000);
+		// $('section').last().slideDown(900);
 	};
 
 	const loadTweets = () => {
@@ -85,7 +101,6 @@ $(document).ready(function () {
 
 	$('.form').submit(function (e) {
 		e.preventDefault();
-
 		// remove error-message element if exists
 		$('.error-message').remove();
 
@@ -103,7 +118,7 @@ $(document).ready(function () {
 	});
 
 	// Allow user to submit tweet pressing 'enter' button
-	$('.form').keyup(function (e) {
+	$('.form').keydown(function (e) {
 		e.preventDefault();
 		if (e.which === 13) {
 			$('.form').submit();
