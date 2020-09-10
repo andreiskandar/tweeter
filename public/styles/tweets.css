@@ -50,6 +50,7 @@ article:hover #tweeter-account {
 .tweet-text {
 	padding-left: 0.7em;
 	font-weight: 500;
+	height: max-content;
 }
 
 .more-info {
