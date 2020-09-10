@@ -39,8 +39,8 @@ nav .aside {
 	align-items: center;
 	position: fixed;
 	top: 90vh;
-	right: 3vw;
-	transform: scale(2.5);
+	right: 4vw;
+	transform: scale(2);
 	color: #fff;
 	width: 1.5em;
 	height: 1.5em;
@@ -49,5 +49,5 @@ nav .aside {
 }
 
 .home-button:hover {
-	transform: scale(2.7);
+	transform: scale(2.3);
 }

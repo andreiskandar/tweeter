@@ -12,14 +12,15 @@ $(document).ready(function () {
 
 	// button to view tweet text box
 	$('.home').click(() => {
-		window.scrollTo(0, -window.scrollY);
+		$('html,body').animate({ scrollTop: 0 }, 1000);
 		$('#tweet-text').focus();
 	});
 
-	// console.log('window.scrollbars.visible:', window.scrollbars.visible);
+	//home button will appear when window scroll is below input text area
 	$(window).scroll(function () {
+		const userInputTextYLocation = 500;
 		const scroll = window.scrollY;
-		if (scroll > 200) {
+		if (scroll > userInputTextYLocation) {
 			$('.home-button').css('visibility', 'visible');
 		} else {
 			$('.home-button').css('visibility', 'hidden');
