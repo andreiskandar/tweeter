@@ -10,14 +10,10 @@ $(document).ready(function () {
 		empty: 'Please type a tweet',
 	};
 
-	$('#home').click(() => {
+	// button to view tweet text box
+	$('.home').click(() => {
+		window.scrollTo(0, -window.scrollY);
 		$('#tweet-text').focus();
-		$('html, body').animate(
-			{
-				scrollTop: $('#tweet-text').offset({ top: 600 }),
-			},
-			4000
-		);
 	});
 
 	// console.log('window.scrollbars.visible:', window.scrollbars.visible);
@@ -25,8 +21,9 @@ $(document).ready(function () {
 		const scroll = window.scrollY;
 		if (scroll > 200) {
 			$('.home-button').css('visibility', 'visible');
+		} else {
+			$('.home-button').css('visibility', 'hidden');
 		}
-		$('.home-button').css('visibility', 'hidden');
 	});
 
 	//escape function to prevent malicious attacks
