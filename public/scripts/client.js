@@ -5,6 +5,35 @@
  */
 
 $(document).ready(function () {
+	const ERROR_MESSAGE = {
+		too_long: 'Please try a shorter tweet',
+		empty: 'Please type a tweet',
+	};
+
+	//escape function to prevent malicious attacks
+	const escape = (str) => {
+		let div = document.createElement('div');
+		div.appendChild(document.createTextNode(str));
+		return div.innerHTML;
+	};
+
+	const validatingForm = () => {
+		const textInput = $('#tweet-text').val();
+
+		if (textInput.length > 140) {
+			return { status: false, message: ERROR_MESSAGE.too_long };
+		} else if (textInput.length === 0 || textInput === null) {
+			return {
+				status: false,
+				message: ERROR_MESSAGE.empty,
+			};
+		} else {
+			return {
+				status: true,
+			};
+		}
+	};
+
 	const createTweetElement = (newTweet) => {
 		const { name, avatars, handle } = newTweet.user;
 		const message = newTweet.content.text;
@@ -15,14 +44,14 @@ $(document).ready(function () {
 			<article>
 				<div class="tweet-header">
 					<div class="profile">
-						<img src="${avatars}" alt="" id="avatars"/>
-						<span id="sender-name">${name}</span>
+						<img src="${escape(avatars)}" alt="" id="avatars"/>
+						<span id="sender-name">${escape(name)}</span>
 					</div>
-					<div id="tweeter-account">${handle}</div>
+					<div id="tweeter-account">${escape(handle)}</div>
 				</div>
-				<p class="tweet-text">${message}</p>
+				<p class="tweet-text">${escape(message)}</p>
 				<div class="more-info">
-					<div id="created-at">${diff}</div>
+					<div id="created-at">${escape(diff)}</div>
 					<div class="icons">
 						<i class="fas fa-flag fa-xs"></i>
 						<i class="far fa-retweet fa-xs"></i>
@@ -43,11 +72,12 @@ $(document).ready(function () {
 		});
 	};
 
+	const renderErrorMessage = (message) => {
+		$('section').append(`<div class="error-message">${message}</div>`);
+	};
+
 	const loadTweets = () => {
 		$.get('http://localhost:8080/tweets').then((fetchedData) => renderTweets(fetchedData));
-		// $.ajax('http://localhost:8080/tweets', { method: 'GET' }).then((fetchedTweet) => {
-		// 	renderTweets(fetchedTweet);
-		// });
 	};
 
 	// Load old tweets when webpage loaded first time
@@ -55,9 +85,21 @@ $(document).ready(function () {
 
 	$('.form').submit(function (e) {
 		e.preventDefault();
-		const serializedData = $(this).serialize();
-		$('#tweet-text').val('');
-		$.post('http://localhost:8080/tweets', serializedData).then(loadTweets);
+
+		// remove error-message element if exists
+		$('.error-message').remove();
+
+		// validate form and set error message
+		if (!validatingForm().status) {
+			renderErrorMessage(validatingForm().message);
+			return;
+		} else {
+			const serializedData = $(this).serialize();
+			$.post('http://localhost:8080/tweets', serializedData).then(() => {
+				loadTweets();
+				$('#tweet-text').val('');
+			});
+		}
 	});
 
 	// Allow user to submit tweet pressing 'enter' button
@@ -65,7 +107,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (e.which === 13) {
 			$('.form').submit();
-			return false;
+			return;
 		}
 	});
 });

@@ -39,3 +39,14 @@
 	font-size: 0.8em;
 	padding: 0.5em;
 }
+
+.error-message {
+	margin: 1em auto;
+
+	height: 1.5em;
+	width: 80%;
+	background-color: #d74d4d;
+	color: #ffffff;
+	border-radius: 1em;
+	text-align: center;
+}
