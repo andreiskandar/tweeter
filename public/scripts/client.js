@@ -5,10 +5,15 @@
  */
 
 $(document).ready(function () {
+	//reset text area
+	$('#tweet-text').val('');
+
 	const ERROR_MESSAGE = {
 		too_long: 'Please try a shorter tweet',
 		empty: 'Please type a tweet',
 	};
+
+	console.log($(window).width(), ' x ', $(window).height());
 
 	// button to view tweet text box
 	$('.home').click(() => {
@@ -18,7 +23,7 @@ $(document).ready(function () {
 
 	//home button will appear when window scroll is below input text area
 	$(window).scroll(function () {
-		const userInputTextYLocation = 500;
+		const userInputTextYLocation = 200;
 		const scroll = window.scrollY;
 		if (scroll > userInputTextYLocation) {
 			$('.home-button').css('visibility', 'visible');

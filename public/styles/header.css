@@ -1,37 +1,46 @@
 header {
-	display: flex;
-	margin-top: 120px;
-	flex-direction: column;
 	background-color: #c7891e;
 	background: url(../images/brick-wall.png);
-	height: 400px;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
 	color: #ffffff;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	header {
+		display: flex;
+		margin-top: 120px;
+		flex-direction: column;
+		height: 400px;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.main-content {
+		display: flex;
+		margin-top: 200px;
+		justify-content: space-between;
+	}
+
 	header {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
-		margin-top: 10vh;
-		height: 30vw;
-	}
-	.profile-pic {
-		margin-top: 2vh;
-		margin-bottom: 0;
-		width: auto;
-		height: 20vw;
-	}
-	br {
-		display: none;
-	}
-	.username {
-		margin-top: 0;
-		padding-bottom: 1vh;
-		font-size: 2vh;
+		justify-content: center;
+		height: 15em;
+		width: 60%;
+		margin: 0 1em 0 40px;
+		padding: 0;
+		font-size: 1.5em;
 	}
 }
