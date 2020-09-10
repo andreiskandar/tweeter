@@ -9,6 +9,11 @@ nav {
 	color: #ffffff;
 }
 
+.brand-logo {
+	width: 6vh;
+	margin: 0;
+	padding: 0;
+}
 .fa-chevron-double-down {
 	position: relative;
 	top: 1.1em;
@@ -21,6 +26,7 @@ nav {
 }
 
 nav .logo {
+	display: inline-block;
 	margin: 1.5em;
 	font-size: 2em;
 	margin-top: 0.7em;
@@ -50,4 +56,24 @@ nav .aside {
 
 .home-button:hover {
 	transform: scale(2.3);
+}
+
+@media only screen and (max-width: 700px) {
+	nav {
+		height: 10vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav .logo {
+		font-size: 3vh;
+		margin-top: 1vh;
+		margin-bottom: 0.5vh;
+	}
+
+	nav .aside {
+		font-size: 2vh;
+		margin-top: 0;
+	}
 }

@@ -10,3 +10,28 @@ header {
 	align-items: center;
 	color: #ffffff;
 }
+
+@media only screen and (max-width: 700px) {
+	header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10vh;
+		height: 30vw;
+	}
+	.profile-pic {
+		margin-top: 2vh;
+		margin-bottom: 0;
+		width: auto;
+		height: 20vw;
+	}
+	br {
+		display: none;
+	}
+	.username {
+		margin-top: 0;
+		padding-bottom: 1vh;
+		font-size: 2vh;
+	}
+}

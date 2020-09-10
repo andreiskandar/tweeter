@@ -3,7 +3,7 @@
 	<head>
 		<!-- Meta Information -->
 		<title>Tweeter - Home Page</title>
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- External CSS -->
 		<link
 			rel="stylesheet"
@@ -36,54 +36,54 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
 			type="text/javascript"
 		></script>
-
-		<!-- App JS -->
-		<script src="./scripts/composer-char-counter.js"></script>
-		<script src="./scripts/client.js"></script>
 	</head>
 
 	<body>
 		<!-- Top nav bar (fixed) -->
 		<nav class="nav">
-			<span class="logo font-bungee">tweeter</span>
-
-			<span class="aside"
-				><b>Write</b> a new tweet
+			<span class="logo font-bungee"> tweeter </span>
+			<span class="aside">
+				<b>Write</b> a new tweet
 				<a href="#" id="home" class="home"> <i class="fas fa-chevron-double-down"></i> </a>
 			</span>
 		</nav>
-		<header>
-			<div>
-				<img src="/images/profile-hex.png" alt="" srcset="" />
-			</div>
-			<br />
-			<div class="username">
-				<span><b>Andre</b> Iskandar</span>
-			</div>
-		</header>
+		<div>
+			<header>
+				<div>
+					<img src="/images/profile-hex.png" alt="" srcset="" class="profile-pic" />
+				</div>
+				<br />
+				<div class="username">
+					<span><b>Andre</b> Iskandar</span>
+				</div>
+			</header>
 
-		<footer></footer>
-		<!-- Page-specific (main) content here -->
-		<main class="container">
-			<section class="new-tweet">
-				<h2>Compose Tweet</h2>
-				<form class="form">
-					<textarea
-						name="text"
-						class="tweet-text"
-						id="tweet-text"
-						placeholder="What are you humming about?"
-					></textarea>
-					<footer class="new-tweet__footer">
-						<button type="submit" class="tweet-button font-bungee" id="tweet-button">Tweet</button>
-						<output name="counter" class="counter font-bungee" for="tweet-text"
-							><span id="chars">140</span></output
+			<!-- Page-specific (main) content here -->
+			<main class="container">
+				<section class="new-tweet">
+					<h2>Compose Tweet</h2>
+					<form class="form">
+						<textarea
+							name="text"
+							class="tweet-text"
+							id="tweet-text"
+							placeholder="What are you humming about?"
 						>
-					</footer>
-				</form>
-			</section>
-			<div id="tweets-container"></div>
-		</main>
+						</textarea>
+						<footer class="new-tweet__footer">
+							<button type="submit" class="tweet-button font-bungee" id="tweet-button">
+								Tweet
+							</button>
+							<output name="counter" class="counter font-bungee" for="tweet-text">
+								<span id="chars">140</span>
+							</output>
+						</footer>
+					</form>
+				</section>
+				<div id="tweets-container"></div>
+			</main>
+		</div>
+
 		<a href="#" class="home-button home"><i class="far fa-angle-double-up"></i></a>
 		<footer class="__footer">
 			<div class="brand__footer">
@@ -91,5 +91,8 @@
 				<div class="copyright"><b>&copy </b>2020</div>
 			</div>
 		</footer>
+		<!-- App JS -->
+		<script src="./scripts/composer-char-counter.js"></script>
+		<script src="./scripts/client.js"></script>
 	</body>
 </html>
