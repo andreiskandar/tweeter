@@ -13,8 +13,6 @@ $(document).ready(function () {
 		empty: 'Please type a tweet',
 	};
 
-	console.log($(window).width(), ' x ', $(window).height());
-
 	// button to view tweet text box
 	$('.home').click(() => {
 		$('html,body').animate({ scrollTop: 0 }, 1000);
@@ -23,7 +21,7 @@ $(document).ready(function () {
 
 	//home button will appear when window scroll is below input text area
 	$(window).scroll(function () {
-		const userInputTextYLocation = 200;
+		const userInputTextYLocation = 100;
 		const scroll = window.scrollY;
 		if (scroll > userInputTextYLocation) {
 			$('.home-button').css('visibility', 'visible');
