@@ -17,6 +17,13 @@ $(document).ready(function () {
 	// Nav button to view tweet text box
 	$('.home').click(() => {
 		$('html,body').animate({ scrollTop: 0 }, 1000);
+		$('.new-tweet').toggle('slow');
+		$('#tweet-text').focus();
+	});
+
+	$('.home-button').click(() => {
+		$('html,body').animate({ scrollTop: 0 }, 1000);
+		$('.new-tweet').show();
 		$('#tweet-text').focus();
 	});
 
