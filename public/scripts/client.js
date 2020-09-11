@@ -5,21 +5,22 @@
  */
 
 $(document).ready(function () {
-	//reset text area
+	// Reset text area onloading the page
 	$('#tweet-text').val('');
 
+	// constants
 	const ERROR_MESSAGE = {
 		too_long: 'Please try a shorter tweet',
 		empty: 'Please type a tweet',
 	};
 
-	// button to view tweet text box
+	// Nav button to view tweet text box
 	$('.home').click(() => {
 		$('html,body').animate({ scrollTop: 0 }, 1000);
 		$('#tweet-text').focus();
 	});
 
-	//home button will appear when window scroll is below input text area
+	// Nav button will appear when window scroll is below input text area
 	$(window).scroll(function () {
 		const userInputTextYLocation = 100;
 		const scroll = window.scrollY;
@@ -30,7 +31,7 @@ $(document).ready(function () {
 		}
 	});
 
-	//escape function to prevent malicious attacks
+	// Escape function to prevent malicious attacks
 	const escape = (str) => {
 		let div = document.createElement('div');
 		div.appendChild(document.createTextNode(str));
