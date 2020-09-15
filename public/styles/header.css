@@ -1,46 +1,46 @@
 .main-content {
-	display: flex;
+  display: flex;
 }
 
 header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: #c7891e;
-	background: url(../images/brick-wall.png);
-	color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7891e;
+  background: url(../images/brick-wall.png);
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 1024px) {
-	.main-content {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
-	header {
-		margin-top: 120px;
-		height: 400px;
-		width: 100%;
-	}
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    margin-top: 120px;
+    height: 400px;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-	.main-content {
-		margin-top: 200px;
-		justify-content: space-between;
-	}
+  .main-content {
+    margin-top: 200px;
+    justify-content: space-between;
+  }
 
-	header {
-		position: sticky;
-		top: 200px;
-		left: 40px;
-		height: 15em;
-		width: 60%;
-		margin: 0 1em 0 40px;
-		font-size: 1.5em;
-	}
+  header {
+    position: sticky;
+    top: 200px;
+    left: 40px;
+    height: 15em;
+    width: 60%;
+    margin: 0 1em 0 40px;
+    font-size: 1.5em;
+  }
 }

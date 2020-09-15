@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Meta Information -->
-		<title>Tweeter - Home Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- External CSS -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-			type="text/css"
-		/>
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
 
-		<link
-			href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-			crossorigin="anonymous"
-		/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
 
-		<!-- App CSS -->
-		<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/header.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
 
-		<!-- External JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-			type="text/javascript"
-		></script>
-	</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
 
-	<body>
-		<!-- Top nav bar (fixed) -->
-		<nav class="nav">
-			<span class="logo font-bungee"> tweeter </span>
-			<span class="aside">
-				<b>Write</b> a new tweet
-				<a href="#" id="home" class="home"> <i class="fas fa-chevron-double-down"></i> </a>
-			</span>
-		</nav>
-		<div class="main-content">
-			<header>
-				<div>
-					<img src="/images/profile-hex.png" alt="" srcset="" class="profile-pic" />
-				</div>
-				<br />
-				<div class="username">
-					<span><b>Andre</b> Iskandar</span>
-				</div>
-			</header>
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav class="nav">
+      <span class="logo font-bungee"> tweeter </span>
+      <span class="aside">
+        <b>Write</b> a new tweet
+        <a href="#" id="home" class="home"> <i class="fas fa-chevron-double-down"></i> </a>
+      </span>
+    </nav>
+    <div class="main-content">
+      <header>
+        <div>
+          <img src="/images/profile-hex.png" alt="" srcset="" class="profile-pic" />
+        </div>
+        <br />
+        <div class="username">
+          <span><b>Andre</b> Iskandar</span>
+        </div>
+      </header>
 
-			<!-- Page-specific (main) content here -->
-			<main class="container">
-				<section class="new-tweet">
-					<form class="form">
-						<textarea
-							name="text"
-							class="tweet-text"
-							id="tweet-text"
-							placeholder="What are you humming about?"
-						>
-						</textarea>
-						<footer class="new-tweet__footer">
-							<button type="submit" class="tweet-button font-bungee" id="tweet-button">
-								Tweet
-							</button>
-							<output name="counter" class="counter font-bungee" for="tweet-text">
-								<span id="chars">140</span>
-							</output>
-						</footer>
-					</form>
-				</section>
-				<div id="tweets-container"></div>
-			</main>
-		</div>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <form class="form">
+            <textarea
+              name="text"
+              class="tweet-text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            >
+            </textarea>
+            <footer class="new-tweet__footer">
+              <button type="submit" class="tweet-button font-bungee" id="tweet-button">
+                Tweet
+              </button>
+              <output name="counter" class="counter font-bungee" for="tweet-text">
+                <span id="chars">140</span>
+              </output>
+            </footer>
+          </form>
+        </section>
+        <div id="tweets-container"></div>
+      </main>
+    </div>
 
-		<a href="#" class="home-button"><i class="far fa-angle-double-up"></i></a>
-		<footer class="__footer">
-			<div class="brand__footer">
-				<div class="font-bungee">tweeter</div>
-				<div class="copyright"><b>&copy </b>2020</div>
-			</div>
-		</footer>
-		<!-- App JS -->
-		<script src="./scripts/composer-char-counter.js"></script>
-		<script src="./scripts/client.js"></script>
-	</body>
+    <a href="#" class="home-button"><i class="far fa-angle-double-up"></i></a>
+    <footer class="__footer">
+      <div class="brand__footer">
+        <div class="font-bungee">tweeter</div>
+        <div class="copyright"><b>&copy </b>2020</div>
+      </div>
+    </footer>
+    <!-- App JS -->
+    <script src="./scripts/composer-char-counter.js"></script>
+    <script src="./scripts/client.js"></script>
+  </body>
 </html>

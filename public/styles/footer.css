@@ -1,22 +1,22 @@
 .__footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: #4056a1;
-	color: #ffffff;
-	width: 100%;
-	height: 100px;
-	margin-top: 2em;
-	bottom: 0;
-	position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #4056a1;
+  color: #ffffff;
+  width: 100%;
+  height: 100px;
+  margin-top: 2em;
+  bottom: 0;
+  position: fixed;
 }
 
 .brand__footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .copyright {
-	font-size: 1em;
+  font-size: 1em;
 }
