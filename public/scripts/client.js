@@ -68,25 +68,25 @@ $(document).ready(function () {
 		const diff = moment(createdAt).fromNow();
 
 		const tweetHTML = `
-			<article>
-				<div class="tweet-header">
-					<div class="profile">
-						<img src="${avatars}" alt="" id="avatars"/>
-						<span id="sender-name">${name}</span>
-					</div>
-					<div id="tweeter-account">${handle}</div>
-				</div>
-				<p class="tweet-text">${escape(message)}</p>
-				<div class="more-info">
-					<div id="created-at">${diff}</div>
-					<div class="icons">
-						<i class="fas fa-flag fa-xs"></i>
-						<i class="far fa-retweet fa-xs"></i>
-						<i class="far fa-heart fa-xs"></i>
-					</div>
-				</div>
-			</article>
-		`;
+<article>
+<div class="tweet-header">
+  <div class="profile">
+    <img src="${avatars}" alt="" id="avatars"/>
+    <span id="sender-name">${name}</span>
+  </div>
+  <div id="tweeter-account">${handle}</div>
+</div>
+<p class="tweet-text">${escape(message)}</p>
+<div class="more-info">
+  <div id="created-at">${diff}</div>
+  <div class="icons">
+    <i class="fas fa-flag fa-xs"></i>
+    <i class="far fa-retweet fa-xs"></i>
+    <i class="far fa-heart fa-xs"></i>
+  </div>
+</div>
+</article>
+`;
 
 		return tweetHTML;
 	};
